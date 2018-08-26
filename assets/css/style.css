@@ -13,13 +13,8 @@ body {
 #titlebox {
     position: relative;
     text-align: center;
-    margin: 10px 100px;
+    margin: 5px 100px;
     color: white;
-}
-
-h1 {
-    font-size: 50px;
-    font-family: 'Bangers', cursive;
 }
 
 #centered {
@@ -29,13 +24,52 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+.img {
+   width: 60%;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: 'Bangers', cursive;
+}
+
 h2 {
     font-size: 40px;
 }
 
-/* @media only screen and (max-width: 768px) {
- 
-    [class*="col-"] {
-        width: 100%;
+h3 {
+    font-size: 25px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 20px;
     }
-} */
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    .img {
+        width: 60%
+     }
+}
+
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 15px;
+    }
+    .img {
+       width: 80%
+    }
+}
+
