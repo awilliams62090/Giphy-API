@@ -97,7 +97,7 @@ h3 {
     #titlebox {
         position: relative;
         text-align: center;
-        margin: 100px 0px 50px 0px; 
+        margin: 50px 0px; 
     }
     #centered {
         position: relative;
@@ -109,7 +109,7 @@ h3 {
     }
 
     h1 {
-        font-size: 40px;
+        font-size: 60px;
         color: rgb(22, 34, 51);
     }
     h2, h3{
