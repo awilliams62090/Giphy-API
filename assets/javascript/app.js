@@ -14,6 +14,7 @@ $(document).ready(function () { //getting the js ready for action
             method: "GET"
         }).then(function (response) {
             console.log(response);
+            //Looping throuhg my array and adding the rating, also giving some variables to call and appending array to page
             for (var i = 0; i < response.data.length; i++) {
                 var gif = response.data[i].images.fixed_height.url;
                 var still = response.data[i].images.fixed_height_still.url;
@@ -33,8 +34,9 @@ $(document).ready(function () { //getting the js ready for action
             }
         });
 
-    }
-
+    };
+    
+    //push array into buttons and re-render buttons to have a gify dispayed on click of button- 
     function displayButtons() {
         $("#addedButtons").empty();
         for (var i = 0; i < topics.length; i++) {
@@ -45,16 +47,18 @@ $(document).ready(function () { //getting the js ready for action
             heroButton.text(topics[i]);
             $("#addedButtons").append(heroButton);
         }
-    }
+    };
+
+    //take the user input from the "search form" and dynamically create a button from their search- call the api onclick to call gifs to page. Also won't let a button be added for words less than 2 characters
     $("#add-hero").click(function (event) {
         event.preventDefault();
         var topic = $("#hero-input").val().trim();
-        if (topic.length > 2){
-         topics.push(topic);}
+        if (topic.length > 2) {
+            topics.push(topic)
+        };
         displayButtons();
-        
-
     });
+
     $(document).on("click", ".hero-btn", function () {
         var heroName = $(this).data("name");
         console.log(heroName);
@@ -62,6 +66,8 @@ $(document).ready(function () { //getting the js ready for action
         displayHeroes(heroName);
 
     });
+
+    //add pause/play functionality to gifs- gifs should all start on pause and when clicked by user, they animate
     $(document).on("click", ".heroImage", function () {
         var image = $(this);
         if (image.attr("data-state") === "gif") {
@@ -75,12 +81,6 @@ $(document).ready(function () { //getting the js ready for action
     });
 
     displayButtons();
-
-    //push array into buttons and re-render buttons to have a gify dispayed on click of button 
-
-    //take the user input from the "search form" and dynamically create a button from their search- call the api onclick to call gifs to page 
-
-    //add pause/play functionality to gifs- gifs should all start on pause and when clicked by user, they animate
 
 
 
