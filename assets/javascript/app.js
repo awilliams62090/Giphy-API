@@ -6,7 +6,7 @@ $(document).ready(function () { //getting the js ready for action
     function displayHeroes(heroName) {
         console.log(heroName);
         //Giphy API- console logging successful use will remove var queryURL = $.get("http://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=mBRN2VcmC2oCNNm2yam6eDKUzpHcDQLI&limit=10"); to use AJAX 
-        var queryURL = ("http://api.giphy.com/v1/gifs/search?q=" + heroName + "&api_key=mBRN2VcmC2oCNNm2yam6eDKUzpHcDQLI&limit=10");
+        var queryURL = ("https://api.giphy.com/v1/gifs/search?q=" + heroName + "&api_key=mBRN2VcmC2oCNNm2yam6eDKUzpHcDQLI&limit=10");
         // queryURL.done(function(data) { console.log("success got data", data); });
         //AJAX Call
         $.ajax({
@@ -35,7 +35,7 @@ $(document).ready(function () { //getting the js ready for action
         });
 
     };
-    
+
     //push array into buttons and re-render buttons to have a gify dispayed on click of button- 
     function displayButtons() {
         $("#addedButtons").empty();
